@@ -1,7 +1,7 @@
 <h1 align="center">EJERCICIOS CON LEAFLET.JS</h1>
 
 <p align="center">
-[Twitter Follow](https://img.shields.io/twitter/follow/acompleta.svg?style=?for-the-badge&logo=twitter)](https://twitter.com/acompleta)
+image:https://img.shields.io/twitter/follow/acompleta?label=Sigueme%20en%20Twitter&logoColor=black&style=social[Twitter Follow]
 </p>
 
 
