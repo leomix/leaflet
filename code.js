@@ -69,10 +69,23 @@ navigator.geolocation.getCurrentPosition(
         maximumAge: 0
     })
 
-//D MUESTRA LA LATITUD Y LONGITUD AL DAR CLICK CON EL MOUSE SOBRE EL MAPA 
+//D MUESTRA LA LATITUD Y LONGITUD AL DAR CLICK CON EL MOUSE SOBRE EL MAPA **AHORA TAMBIEN BUSCA LA DIRECCION
 // SE TRASLAPA CON A USAR UNO O OTRO
-function onMapClick(e) {
-    alert("You clicked the map at " + e.latlng)
+async function onMapClick(e) {
+    const result = await fetch(`https://nominatim.openstreetmap.org/reverse?format=jsonv2&lat=${e.latlng.lat}&lon=${e.latlng.lng}&zoom=18&addressdetails=1`)
+    const json = await result.json()
+    console.log(json)
+    const nueva_dir = document.createElement('div')
+    nueva_dir.innerHTML = json.display_name
+    document.querySelector('.direcciones').appendChild(nueva_dir)
+
+}
+
+function Get(whateverUrl){
+    var Httpreq = new XMLHttpRequest(); // a new request
+    Httpreq.open("GET",whateverUrl,false);
+    Httpreq.send(null);
+    return Httpreq.responseText;          
 }
 
 myMap.on('click', onMapClick)
@@ -89,3 +102,14 @@ function centerMapOnPost() {
     myMap.panTo(this.getLatLng())
     console.log(markersById)
 }
+
+myMap.addControl( new L.Control.Search({
+    url: 'https://nominatim.openstreetmap.org/search?format=json&q={s}+Mexico',
+    jsonpParam: 'json_callback',
+    propertyName: 'display_name',
+    propertyLoc: ['lat','lon'],
+    marker: L.circleMarker([0,0],{radius:30}),
+    autoCollapse: true,
+    autoType: false,
+    minLength: 2
+}) );
