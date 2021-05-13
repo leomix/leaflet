@@ -3,13 +3,8 @@
 
 <p align="center">
 
-<img src="https://img.shields.io/badge/made%20by-leomix.svg" >
+[![Twitter Follow](https://img.shields.io/twitter/follow/acompleta.svg?style=social&label=Follow)](https://twitter.com/acompleta)
 
-<img src="https://img.shields.io/github/languages/top/silent-lad/Vue2BaremetricsCalendar.svg">
-
-<img src="https://img.shields.io/github/issues/silent-lad/Vue2BaremetricsCalendar.svg">
-
-<img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat">
 </p>
 
 _Leaflet es un servicio para agregar mapas y tiene la ventaja de ser codigo abierto._
