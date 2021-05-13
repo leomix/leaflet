@@ -130,4 +130,6 @@ function createMarker(lat,lng,text,i){
         .addTo(myMap)
         .on('click', centerMapOnPost)
     markersById[i]=marker
+    const group = new L.featureGroup(Object.values(markersById));
+    myMap.fitBounds(group.getBounds());
 }
