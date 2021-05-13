@@ -37,40 +37,40 @@ myMap.on('dblclick', e => {
 
 //B USA LA FUNCTION NATIVA DE LEAFLET PARA ENCONTRAR LA UBICACION DEL USUARIO Y MARCAR UN CIRCULO Y UN MARCADOR EN SU UBICACION
 
-myMap.locate({setView: true, 
-    maxZoom: 16, 
-    watch:true
-  });
+// myMap.locate({setView: true, 
+//     maxZoom: 16, 
+//     watch:true
+//   });
 
-function onLocationFound(e) {
-var radius = e.accuracy / 2;
-L.marker(e.latlng).addTo(myMap)
-.bindPopup("You are within " + radius + " meters from this point").openPopup();
-L.circle(e.latlng, radius).addTo(myMap);
-}
+// function onLocationFound(e) {
+// var radius = e.accuracy / 2;
+// L.marker(e.latlng).addTo(myMap)
+// .bindPopup("You are within " + radius + " meters from this point").openPopup();
+// L.circle(e.latlng, radius).addTo(myMap);
+// }
 
-myMap.on('locationfound', onLocationFound);
+// myMap.on('locationfound', onLocationFound);
 
 //C USA LA GEOLOCALIZACION NATIVA DEL EXPLORADOR PARA PONER UN MARCADOR ENCIMA DE TU UBICACION ACTUAL
 
-navigator.geolocation.getCurrentPosition(
-    (pos) => {
-        const { coords } = pos
-        const { latitude, longitude } = coords
-        L.marker([latitude, longitude], { icon: iconMarker }).addTo(myMap)
+// navigator.geolocation.getCurrentPosition(
+//     (pos) => {
+//         const { coords } = pos
+//         const { latitude, longitude } = coords
+//         L.marker([latitude, longitude], { icon: iconMarker }).addTo(myMap)
 
-        setTimeout(() => {
-            myMap.panTo(new L.LatLng(latitude, longitude))
-        }, 1000)
-    },
-    (error) => {
-        console.log(error)
-    },
-    {
-        enableHighAccuracy: true,
-        timeout: 5000,
-        maximumAge: 0
-    })
+//         setTimeout(() => {
+//             myMap.panTo(new L.LatLng(latitude, longitude))
+//         }, 1000)
+//     },
+//     (error) => {
+//         console.log(error)
+//     },
+//     {
+//         enableHighAccuracy: true,
+//         timeout: 5000,
+//         maximumAge: 0
+//     })
 
 //D MUESTRA LA LATITUD Y LONGITUD AL DAR CLICK CON EL MOUSE SOBRE EL MAPA **AHORA TAMBIEN BUSCA LA DIRECCION Y LA AÑADE EN UN DIV EN LA PARTE INFERIOR DEL MAPA
 // SE TRASLAPA CON A USAR UNO O OTRO
@@ -122,7 +122,7 @@ function createDiv(id,text){
     document.querySelector('.direcciones').appendChild(nueva_dir)
 }
 
-//H FUNCION PARA GENERAR LOS MARCADORES
+//H FUNCION PARA GENERAR LOS MARCADORES DESPUES HACE UN ZOOM PARA MOSTRAR TODOS LOS MARCADORES 
 
 function createMarker(lat,lng,text,i){
     marker = new L.marker([lat, lng], { icon: iconMarker })
@@ -130,6 +130,7 @@ function createMarker(lat,lng,text,i){
         .addTo(myMap)
         .on('click', centerMapOnPost)
     markersById[i]=marker
+
     const group = new L.featureGroup(Object.values(markersById));
-    myMap.fitBounds(group.getBounds());
+    myMap.fitBounds(group.getBounds().pad(0.5));
 }
