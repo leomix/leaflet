@@ -1,8 +1,7 @@
 <h1 align="center">EJERCICIOS CON LEAFLET.JS</h1>
 
-<p align="center">
-! [Twitter Follow](https://img.shields.io/twitter/follow/acompleta.svg?style=social&label=Follow)](https://twitter.com/acompleta)
-</p>
+[![Twitter Follow](https://img.shields.io/twitter/follow/maktub82.svg?style=social&label=Follow)](https://twitter.com/maktub82)
+
 
 
 _Leaflet es un servicio para agregar mapas y tiene la ventaja de ser codigo abierto._
