@@ -3,7 +3,7 @@
 
 <p align="center">
 
-[![Twitter Follow](https://img.shields.io/twitter/follow/acompleta.svg?style=social&label=Followstyle=for-the-badge&logo=appveyor)](https://twitter.com/acompleta)
+[![Twitter Follow](https://img.shields.io/twitter/follow/acompleta.svg?style=?for-the-badge&logo=twitter)](https://twitter.com/acompleta)
 
 </p>
 
