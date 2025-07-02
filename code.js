@@ -2,11 +2,11 @@
 var markersById = {};
 
 var locations = [
-    ["CASA DE MAMA", 19.37658, -99.181137],
-    ["CASA ADOLFO", 19.352773, -99.162769],
+    ["PUNTO 1", 19.37658, -99.181137],
+    ["PUNTO 2", 19.352773, -99.162769],
     ["CENTRO HISTORICO", 19.434057, -99.131012],
-    ["TRABAJO ANTERIOR", 19.443932, -99.087925],
-    ["CASA DE DAVID", 19.683283, -99.143758]
+    ["PUNTO 4", 19.443932, -99.087925],
+    ["PUNTO 5", 19.683283, -99.143758]
 ]
 let myMap = L.map('myMap').setView([19.379211, -99.20414], 13)
 
